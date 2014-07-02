@@ -17,12 +17,14 @@ LOCAL_PATH := $(call my-dir)
 
 ########################
 
+ifneq ($(SKIP_DHCPD_CONF),y)
 include $(CLEAR_VARS)
 LOCAL_MODULE := dhcpcd.conf
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/dhcpcd
 LOCAL_SRC_FILES := android_dhcpcd.conf
 include $(BUILD_PREBUILT)
+endif
 
 #########################
 
